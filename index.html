@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TicTac Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/overlays.css" />
+    <link rel="stylesheet" href="styles/config.css" />
+    <link rel="stylesheet" href="styles/game.css" />
+  </head>
+  <body>
+    <div id="backdrop"></div>
+    <header id="main-header">
+      <h1>Tic Tac Toe</h1>
+      <p>Play one of the famies games in the world!</p>
+    </header>
+    <main>
+      <div class="modal" id="config-overlay">
+        <h2>Choose your name</h2>
+        <form>
+          <div class="form-control">
+            <label for="playername">player Name</label>
+            <input type="text" name="playername" id="playername" />
+          </div>
+          <div>
+            <button type="button" class="base-button btn-alt">Cancel</button>
+            <button type="submit" class="base-button">Confirm</button>
+          </div>
+        </form>
+      </div>
+      <section id="game-config">
+        <ol>
+          <li>
+            <article>
+              <h2>Player 1</h2>
+              <h3>PLAYER NAME</h3>
+              <p class="symbol">X</p>
+              <button class="base-button btn-alt" id="edit-player-1">Edit</button>
+            </article>
+          </li>
+          <li>
+            <article>
+              <h2>Player 2</h2>
+              <h3>PLAYER NAME</h3>
+              <p class="symbol">O</p>
+              <button class="base-button btn-alt" id="edit-player-2">Edit</button>
+            </article>
+          </li>
+        </ol>
+        <button class="base-button">Start New Game</button>
+      </section>
+
+      <section id="active-game">
+        <div id="game-over">
+          <h2>You won! <span id="winner-active">PLAYER NAME</span></h2>
+          <p>Click "Start new game" to start a new game</p>
+        </div>
+
+        <p>It's your turn <span id="active-player-name">PLAYER NAME</span></p>
+        <ol id="game-board">
+          <li class="disabled">X</li>
+          <li></li>
+          <li></li>
+
+          <li></li>
+          <li></li>
+          <li></li>
+
+          <li class="disabled">O</li>
+          <li></li>
+          <li></li>
+        </ol>
+      </section>
+    </main>
+  </body>
+</html>
