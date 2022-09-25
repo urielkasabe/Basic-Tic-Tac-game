@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="styles/overlays.css" />
     <link rel="stylesheet" href="styles/config.css" />
     <link rel="stylesheet" href="styles/game.css" />
+    <script src="/scripts/config.js" defer></script>
+    <script src="/scripts/game.js" defer></script>
+    <script src="/scripts/app.js" defer></script>
   </head>
   <body>
     <div id="backdrop"></div>
@@ -28,10 +31,13 @@
         <form>
           <div class="form-control">
             <label for="playername">player Name</label>
-            <input type="text" name="playername" id="playername" />
+            <input type="text" name="playername" id="playername" required />
           </div>
+          <p id="config-error"></p>
           <div>
-            <button type="button" class="base-button btn-alt">Cancel</button>
+            <button type="reset" class="base-button btn-alt" id="cancel-config">
+              Cancel
+            </button>
             <button type="submit" class="base-button">Confirm</button>
           </div>
         </form>
@@ -39,44 +45,56 @@
       <section id="game-config">
         <ol>
           <li>
-            <article>
+            <article id="player-1-data">
               <h2>Player 1</h2>
               <h3>PLAYER NAME</h3>
               <p class="symbol">X</p>
-              <button class="base-button btn-alt" id="edit-player-1">Edit</button>
+              <button
+                class="base-button btn-alt"
+                id="edit-player-1"
+                data-playerid="1"
+              >
+                Edit
+              </button>
             </article>
           </li>
           <li>
-            <article>
+            <article id="player-2-data">
               <h2>Player 2</h2>
               <h3>PLAYER NAME</h3>
               <p class="symbol">O</p>
-              <button class="base-button btn-alt" id="edit-player-2">Edit</button>
+              <button
+                class="base-button btn-alt"
+                id="edit-player-2"
+                data-playerid="2"
+              >
+                Edit
+              </button>
             </article>
           </li>
         </ol>
-        <button class="base-button">Start New Game</button>
+        <button class="base-button" id="start-game">Start New Game</button>
       </section>
 
       <section id="active-game">
         <div id="game-over">
-          <h2>You won! <span id="winner-active">PLAYER NAME</span></h2>
+          <h2>You won! <span id="winner-active">PLAYER NAME</span>!</h2>
           <p>Click "Start new game" to start a new game</p>
         </div>
 
         <p>It's your turn <span id="active-player-name">PLAYER NAME</span></p>
         <ol id="game-board">
-          <li class="disabled">X</li>
-          <li></li>
-          <li></li>
+          <li data-col="1" data-row="1"></li>
+          <li data-col="2" data-row="1"></li>
+          <li data-col="3" data-row="1"></li>
 
-          <li></li>
-          <li></li>
-          <li></li>
+          <li data-col="1" data-row="2"></li>
+          <li data-col="2" data-row="2"></li>
+          <li data-col="3" data-row="2"></li>
 
-          <li class="disabled">O</li>
-          <li></li>
-          <li></li>
+          <li data-col="1" data-row="3"></li>
+          <li data-col="2" data-row="3"></li>
+          <li data-col="3" data-row="3"></li>
         </ol>
       </section>
     </main>
